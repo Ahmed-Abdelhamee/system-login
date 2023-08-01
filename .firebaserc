@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "games-74b1d"
+  },
+  "targets": {
+    "games-74b1d": {
+      "hosting": {
+        "login-project": [
+          "games-74b1d"
+        ]
+      }
+    }
+  }
+}

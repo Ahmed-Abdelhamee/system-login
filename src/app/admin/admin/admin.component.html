@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <div class="svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400"><path fill="#d0e8fc" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,170.7C672,160,768,96,864,85.3C960,75,1056,117,1152,149.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  </div>
+<div class="container content">
+    <div class="d-flex justify-content-around buttons-group">
+        <button class="btn btn-warning text-light" (click)="specifyArray('day')">day</button>
+        <button class="btn btn-warning text-light" (click)="specifyArray('month')">month</button>
+        <button class="btn btn-warning text-light" (click)="specifyArray('year')">year</button>
+        <button class="btn btn-warning text-light"  data-toggle="modal" data-target="#changeData" (click)="setFormData('addUser')" >add user</button>
+        <button class="btn btn-warning text-light"  data-toggle="modal" data-target="#changeData" (click)="setFormData('BossChange')">change Boss</button>
+    </div>
+    <h2 class="text-center p-2" *ngIf="sum!=''">{{sum}} :  الايرادات </h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">game</th>
+            <th scope="col" class="mobile-show">cost</th>
+            <th scope="col">date</th>
+            <th scope="col" class="mobile-show">Uid</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of arr; let i=index" [ngStyle]="{'background-color' : item.Uid === 'user1' ? 'aliceblue' : ''} ">
+            <td>{{i+1}}</td>
+            <td>{{item.game}}</td>
+            <td class="mobile-show">{{item.cost}}</td> 
+            <td>{{item.date}}</td>
+            <td class="mobile-show">{{item.Uid}}</td>
+            <td><button class="btn btn-info" (click)="show(item)"  data-toggle="modal" data-target="#exampleModal">Show</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</body>
+</html>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="col-12">
+            <tr>
+              <!-- <td class="border">{{T_ID}}</td> -->
+              <td class="ID">
+                <tr>
+                  <td class="border">{{showItem.T_ID}}</td>
+                  <td class="border">{{showItem.M_ID}}</td>
+                  <td class="border">{{showItem.Y_ID}}</td>
+                </tr>
+              </td>
+            <td class="dotted-right1">  تيك اواي </td>
+            <td>   الفاتورة </td>
+            </tr>
+            <tr>
+              <td class="pt-2 pb-2"> {{showItem.time}} <br> {{showItem.date}} </td>
+            <td class="dotted-right2">  العاب هوائية</td>
+            <td>   الكاشير </td>
+            </tr>
+          </table>
+          <table class="col-12">
+            <thead>
+              <th class="border">اجمالي</th>
+              <th class="border">كمية</th>
+              <th class="border">سعر </th>
+              <th class="border">الصنف</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border">{{showItem.cost}}</td>
+                <td class="border">1</td>
+                <td class="border">{{showItem.cost}}</td>
+                <td class="border">{{showItem.game}}</td>
+              </tr>
+
+              <tr *ngIf="showItem.Uid =='user1'">
+                <td class="border" colspan="3">{{showItem.timeTo}} نهاية الحجز</td>
+                <td class="border" colspan="1">{{showItem.timeFrom }} بداية الحجز </td>
+              </tr>
+
+              <tr>
+                <td class="border" colspan="3">{{showItem.cost }} جنية </td>
+                <td class="border">اجمالي</td>
+              </tr>
+              <tr>
+                <td class="border">0.0</td>
+                <td class="border" colspan="2"> 0.0 % الخدمة </td>
+                <td class="border"> 0 %  الخصم</td>
+              </tr>
+              <tr>
+                <td class="border" colspan="3">{{showItem.cost }} جنية </td>
+                <td class="border">المطلوب سدادة</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+            <button (click)="show_Deleted_btns()" class="btn btn-danger" *ngIf="!Deleted_btns && basic_delete_btn">delete</button>
+            <button (click)="deleteItem()" class="btn btn-outline-success mr-5" *ngIf="Deleted_btns">Sure</button>
+            <button class="close" data-dismiss="modal" aria-label="Close" class="btn btn-outline-danger" *ngIf="Deleted_btns">cancel</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- add-user  or  change-Boss  Modal -->
+  <div class="modal fade" id="changeData" tabindex="-1" aria-labelledby="changeDataLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">add user</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addUser" class="card p-3" (submit)="submitUser()" *ngIf="showModalForm">
+            <div class="form-group">
+              <select class="form-control"  name="user" id="user" formControlName="role">
+                <option value="default"> select user</option>
+                <option value="user1"> user 1</option>
+                <option value="user2">user 2</option>
+                <option value="admin">admin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input class="form-control"  type="email" name="email" email id="email" placeholder="enter email" formControlName="email">
+            </div>
+            <div class="form-group">
+              <input class="form-control"  type="password" name="pass" id="pass" placeholder="enter password" formControlName="pass">
+            </div>
+            <div class="form-group d-flex justify-content-center">
+              <button type="submit" class="btn btn-outline-info">add user</button>
+            </div>
+          </form>
+
+          <form [formGroup]="changeBoss" class="card p-3" (submit)="submitBoss()" *ngIf="!showModalForm">
+            <p class="text-info text-right">رئيس مجلس الادارة</p>
+            <div class="form-group">
+              <input class="form-control text-info text-center"  type="text" name="name" email id="name" placeholder="Boss name" formControlName="name">
+            </div>
+            <div class="form-group d-flex justify-content-center">
+              <button type="submit" class="btn btn-outline-info">change</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>

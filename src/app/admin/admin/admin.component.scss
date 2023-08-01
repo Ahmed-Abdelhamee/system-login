@@ -1,0 +1,90 @@
+
+
+[class*="col-"]{
+    width: 100%;
+    float: left;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@media screen and (max-width : 600px) {
+    div.content{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    body div .buttons-group{
+        margin-bottom: 15px;
+    }
+    body div h2{
+        padding-top: 0px;
+        font-size: 21px;
+    }
+    div .table tbody tr .mobile-show,
+    div .table thead tr .mobile-show{
+        display: none;
+    }
+    div .table tbody tr td {
+        font-size: 2.2vh;
+    }
+    div .table tbody tr td button{
+        font-size: 2.2vh;
+    }
+    div div .btn-warning{
+        font-size: 1.6vh;
+        width: min-content;
+        padding: 5px 10px;
+    }
+}
+.content{
+    padding: 25px 10px;
+}
+.svg{
+    margin-bottom: -24%;
+}
+
+.table td{
+    border-top: 2px solid #fff;
+}
+.btn-warning{
+    background-color: #007991;
+    border-color: #007991;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+table{
+    text-align: center;
+}
+.card-Data{
+    text-align: center;
+}
+.border{
+    padding: 7px auto;
+    border: 1px solid lightgray;
+}
+.dotted-right1,.dotted-right2{
+    position: relative;
+}
+.dotted-right1::after,
+.dotted-right2::after{
+    position: absolute;
+    content: ":";
+    right: 0px;
+    top: 15%;
+}
+
+.dotted-right2::after{
+    top: 30%
+}
+td{
+    padding: 5px;
+}
+.ID td{
+    padding: 5px 15px;
+}
+.buttons-group{
+    margin-bottom: 20px;
+}

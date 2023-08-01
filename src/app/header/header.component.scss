@@ -1,0 +1,38 @@
+
+@media screen and (max-width:1000px) {
+      nav .links{
+        position: relative;
+      }
+}
+.navbar{
+    background-color: #d0e8fc;
+    position: relative;
+}
+.navbar-brand{
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #0000ff;
+    font-size: 17px;
+    padding-left: 20px;
+    font-style: italic;
+}
+.nav-item{
+    font-weight: 600;
+    padding-right: 10px;
+    font-size: 17px;
+}
+nav a #newlineInTitle{
+    display: block;
+
+}
+.links{
+    position: absolute;
+    right: 0;
+}
+.active{
+    background-color: aliceblue;
+}
+.btn-danger{
+    width: fit-content;
+    padding: 7px 14px;
+}

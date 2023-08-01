@@ -1,0 +1,87 @@
+
+<div class="svg">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400"><path fill="#d0e8fc" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,170.7C672,160,768,96,864,85.3C960,75,1056,117,1152,149.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+</div>
+
+<div class="col-12 content">
+    <div class="col-sm-4 card request">
+          <p class="title">User two</p>
+          <div class="buttons text-center">
+                <button class="btn2" (click)="game1()" data-toggle="modal" data-target="#exampleModal1">لعبة هوائية 10ج </button>
+                <button class="btn1" (click)="game2()" data-toggle="modal" data-target="#exampleModal1">لعبة هوائية 5ج </button>
+          </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog d-flex justify-content-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card ml-5">
+          <p class="title-modal"> جمعية نادي اعضاء هيئة التدريس <br> المشهرة برقم 344 لسنة 1987</p>
+          <table class="col-12">
+            <tr>
+              <!-- <td class="border">{{T_ID}}</td> -->
+              <td class="ID">
+                <tr>
+                  <td class="border">{{T_ID}}</td>
+                  <td class="border">{{M_ID}}</td>
+                  <td class="border">{{Y_ID}}</td>
+                </tr>
+              </td>
+            <td class="dotted-right1">  تيك اواي </td>
+            <td>   الفاتورة </td>
+            </tr>
+            <tr>
+              <td class="pt-2 pb-2"> {{time}} <br> {{datee}} </td>
+            <td class="dotted-right2">  العاب هوائية</td>
+            <td>   الكاشير </td>
+            </tr>
+          </table>
+          <table>
+            <thead>
+              <th class="border">اجمالي</th>
+              <th class="border">كمية</th>
+              <th class="border">سعر </th>
+              <th class="border">الصنف</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border">{{cost}}</td>
+                <td class="border">1</td>
+                <td class="border">{{cost}}</td>
+                <td class="border">{{game}}</td>
+              </tr>
+              <tr>
+                <td class="border" colspan="3">{{ cost }}.0 جنية </td>
+                <td class="border">اجمالي</td>
+              </tr>
+              <tr>
+                <td class="border">0.0</td>
+                <td class="border" colspan="2"> 0.0 % الخدمة </td>
+                <td class="border"> 0 %  الخصم</td>
+              </tr>
+              <tr>
+                <td class="border" colspan="3">{{ cost }} جنية </td>
+                <td class="border">المطلوب سدادة</td>
+              </tr>
+            </tbody>
+          </table>
+          <p> رئيس مجلس الادارة  </p>
+          <p> أ.د / عبد الباسط محمد ابو ضيف</p>
+          <p> facebook/ Semicolon codes </p>
+          <div class="d-flex justify-content-center mt-2">
+            <button class="btn btn-outline-info" onclick="print()">print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

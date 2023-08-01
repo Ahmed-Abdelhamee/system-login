@@ -1,0 +1,115 @@
+
+@media only print
+{
+   body{visibility: hidden;}
+   .printId{visibility: visible;}
+   div.svg{
+    display: none;
+    }
+    div div.request{
+        display: none;
+    }
+   .modal .modal-dialog .modal-content .modal-header,
+   .modal .modal-dialog .modal-content .btn{
+    display: none;
+   }
+   .modal .modal-dialog .modal-content ,
+   .modal .modal-dialog .modal-content .modal-body .card{
+    border: none;
+    width: 1000px;
+   }
+//    .modal .modal-dialog .modal-content .modal-body .card p{
+        // font-size: 55px;
+        // padding-bottom: 45px;
+    // }
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.svg{
+    margin-bottom: -20.5%;
+}
+.card{
+    // box-shadow: 0px 0px 17px #b1dbff;
+    border-radius: 10px;
+    background-color: #fff;
+    background: none;
+}
+form{
+    margin: 24px 0px;
+}
+form p{
+    text-align: center;
+    color: #00a1d9;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: lostbar;
+    text-transform: capitalize;
+}
+select{
+    font-size: 18px;
+}
+.time-select-style{
+    box-sizing: border-box;
+    width: 45%;
+    float: right;
+    margin: 10px 0px;
+}
+.margin-right{
+    margin-right: 10%;
+}
+.btn{
+    margin-top: 20px;
+}
+.modal-header{
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.modal-body{
+    margin-left: -35px;
+}
+.modal-body .card{
+    width: 85%; padding: 15px; margin-bottom: 10px;
+}
+
+table{
+    text-align: center;
+}
+.card-Data{
+    text-align: center;
+}
+.border{
+    padding: 7px auto;
+    border: 1px solid lightgray;
+}
+.dotted-right1,.dotted-right2{
+    position: relative;
+}
+.dotted-right1::after,
+.dotted-right2::after{
+    position: absolute;
+    content: ":";
+    right: 0px;
+    top: 15%;
+}
+.dotted-right2::after{
+    top: 30%
+}
+td{
+    padding: 5px;
+}
+.ID td{
+    padding: 5px 15px;
+}
+.title-modal{
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+p{
+    text-align: center;
+    margin-bottom: 2px;
+}
