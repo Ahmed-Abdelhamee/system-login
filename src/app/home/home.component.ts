@@ -27,12 +27,9 @@ export class HomeComponent implements OnInit {
     pass:["",[Validators.required,Validators.minLength(6)]],
   })
   // ----------------------------- freeTrial code ; ---------------------------
-  freeTrial:boolean=true;
   date=new Date();
   ngOnInit(): void {
-    if(this.date.getFullYear() == 2023 && this.date.getMonth()+1 == 9 && this.date.getDate() == 7){
-      this.freeTrial = false;
-    }
+    
   }
 
   get email(){
